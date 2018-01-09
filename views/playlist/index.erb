@@ -1,22 +1,22 @@
 <div class="ui vertical stripe segment">
-<div class="ui three column middle aligned stackable grid container">
-  <div class="column">
-  <% @playlists.each.with_index(1) do |playlist, index| %>
-  <div class="ui fluid card">
-    <div class="content">
-      <div class="header"><%= index %>.</div>
+  <div class="ui three column middle aligned stackable grid container">
+    <% @playlists.each.with_index(1) do |playlist, index| %>
+    <div class="column">
+      <div class="ui fluid card">
+        <div class="content">
+          <div class="header"><%= index %>.</div>
+        </div>
+        <div class="content">
+          <iframe src="https://embed.spotify.com/?uri=<%= playlist.url %>" height="380" frameborder="0" allowtransparency="true" style="width: 100%;"></iframe>
+        </div>
+      </div>
     </div>
-    <div class="content">
-      <iframe src="https://embed.spotify.com/?uri=<%= playlist.url %>" height="380" frameborder="0" allowtransparency="true" style="width: 100%;"></iframe>
-    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
-</div>
 </div>
 <div class="ui vertical stripe segment center aligned">
   <div class="ui text container">
-    <a class="ui huge primary button" href="/new">Add yours <i class="right arrow icon"></i></a>
+    <a class="ui huge primary button" href="/create">Add yours <i class="right arrow icon"></i></a>
   </div>
 </div>
 

@@ -1,0 +1,24 @@
+<div class="ui vertical stripe segment">
+  <div class="ui text container">
+    <form class="ui form" action="/" method="post">
+      <div class="field">
+        <label>Spotify 'Discover Now' URI</label>
+        <input name="playlist[url]"
+               placeholder="URI"
+               type="text"
+               pattern="spotify:user:spotify:playlist:.*"
+               required>
+      </div>
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+<div class="ui vertical stripe segment">
+  <div class="ui text container">
+    <details>
+      <summary class="ui header">Where do I get the Spotify URI from?</summary>
+      <p>Go to the Discovery Playlist, right mouse click, go to 'Share' and finally click 'Copy Spotify URI'</p>
+      <img src="/images/share.png" alt="Where to get the Spotify URI from">
+    </details>
+  </div>
+</div>
