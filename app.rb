@@ -5,7 +5,7 @@ require './environments'
 require './models/playlist'
 
 get "/" do
- @title = 'Guess Whos Playlist'
+ @title = 'Guess Whose Playlist'
  @playlists = Playlist.all
  erb :"playlist/index"
 end
@@ -24,6 +24,6 @@ post "/" do
 end
 
 get "/create" do
-  @title = 'Add your playlist - Guess Whos Playlist'
+  @title = 'Add your playlist - Guess Whose Playlist'
   erb :"playlist/create"
 end
