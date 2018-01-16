@@ -12,6 +12,7 @@
           </div>
           <iframe src="https://embed.spotify.com/?uri=<%= playlist.url %>" height="380" frameborder="0" allowtransparency="true" style="width: 100%;"></iframe>
         </div>
+        <% if ENV['SHOW_OWNERS'] == true %>
         <div class="extra content">
           <select class="ui fluid selection dropdown" name="guesses[<%= index %>]">
             <option value="">Select your guess</option>
@@ -20,6 +21,7 @@
             <% end %>
           </select>
         </div>
+        <% end %>
         <% if !@params.empty? && @params[index.to_s] == playlist.owner %>
         <div class="ui bottom attached positive message">
           <div class="header">You got this one right!</div>
