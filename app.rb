@@ -37,3 +37,10 @@ get "/create" do
   @title = 'Add your playlist - Guess Whose Playlist'
   erb :"playlist/create"
 end
+
+get "/delete_all" do
+  if params[:password] = ENV['PASSWORD']
+    Playlist.destroy_all
+  end
+  redirect "/"
+end
