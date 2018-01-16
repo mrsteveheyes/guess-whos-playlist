@@ -1,6 +1,6 @@
 <div class="ui vertical stripe segment">
   <div class="ui text container">
-    <form class="ui form" action="/" method="post">
+    <form class="ui form" action="/create" method="post">
       <h1 class="ui header">Add your playlist</h1>
       <div class="field">
         <label>Spotify 'Discover Now' URI</label>
@@ -8,6 +8,13 @@
                placeholder="URI"
                type="text"
                pattern="spotify:user:spotify:playlist:.*"
+               required>
+      </div>
+      <div class="field">
+        <label>Your name</label>
+        <input name="playlist[owner]"
+               placeholder="Your name"
+               type="text"
                required>
       </div>
       <button class="ui button" type="submit">Submit</button>

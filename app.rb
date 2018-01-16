@@ -7,10 +7,20 @@ require './models/playlist'
 get "/" do
  @title = 'Guess Whose Playlist'
  @playlists = Playlist.all
+ @names = @playlists.pluck(:owner)
  erb :"playlist/index"
 end
 
 post "/" do
+  @title = 'Guess Whose Playlist'
+  @playlists = Playlist.all
+  @names = @playlists.pluck(:owner)
+  @params = params[:guesses]
+  erb :"playlist/index"
+end
+
+
+post "/create" do
   if params[:playlist].has_key? :url
     @playlist = Playlist.new(params[:playlist])
     if @playlist.save

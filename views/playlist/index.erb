@@ -1,4 +1,4 @@
-<div class="ui vertical stripe segment">
+<form action="/" method="POST"  class="ui vertical stripe segment">
   <div class="ui three column middle aligned stackable grid container">
     <% @playlists.each.with_index(1) do |playlist, index| %>
     <div class="column">
@@ -12,14 +12,32 @@
           </div>
           <iframe src="https://embed.spotify.com/?uri=<%= playlist.url %>" height="380" frameborder="0" allowtransparency="true" style="width: 100%;"></iframe>
         </div>
+        <div class="extra content">
+          <select class="ui fluid selection dropdown" name="guesses[<%= index %>]">
+            <option value="">Select your guess</option>
+            <% @names.each do |name| %>
+            <option <% if !@params.empty? && @params[index.to_s] == name %>selected <%end %>value="<%= name %>"><%= name %></option>
+            <% end %>
+          </select>
+        </div>
+        <% if !@params.empty? && @params[index.to_s] == playlist.owner %>
+        <div class="ui bottom attached positive message">
+          <div class="header">You got this one right!</div>
+        </div>
+        <% end %>
       </div>
     </div>
     <% end %>
   </div>
-</div>
+  <div class="ui vertical stripe segment center aligned">
+    <div class="ui text container">
+      <button class="ui primary button huge" type="submit">Submit</button>
+    </div>
+  </div>
+</form>
 <div class="ui vertical stripe segment center aligned">
   <div class="ui text container">
-    <a class="ui huge primary button" href="/create">Add yours <i class="right arrow icon"></i></a>
+    <a class="ui huge button" href="/create">Add yours <i class="right arrow icon"></i></a>
   </div>
 </div>
 
