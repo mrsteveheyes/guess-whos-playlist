@@ -7,7 +7,7 @@ gem "sinatra-activerecord"
 gem 'sinatra-flash'
 gem 'sinatra-redirect-with-flash'
 gem 'sinatra-contrib'
-gem 'rake'
+gem 'rake', '>= 12.3.3'
 
 group :development do
  gem 'sqlite3'
