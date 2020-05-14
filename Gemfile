@@ -1,17 +1,17 @@
 source 'https://rubygems.org'
 ruby "2.4.0"
 
-gem "sinatra"
+gem "sinatra", ">= 2.0.0"
 gem "activerecord"
-gem "sinatra-activerecord"
-gem 'sinatra-flash'
-gem 'sinatra-redirect-with-flash'
-gem 'sinatra-contrib'
+gem "sinatra-activerecord", ">= 2.0.13"
+gem 'sinatra-flash', '>= 0.3.0'
+gem 'sinatra-redirect-with-flash', '>= 0.2.1'
+gem 'sinatra-contrib', '>= 2.0.0'
 gem 'rake'
 
 group :development do
  gem 'sqlite3'
- gem "tux"
+ gem "tux", ">= 0.3.0"
 end
 
 group :production do
